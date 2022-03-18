@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <a class="nav-link" href="{{ route('citizens.create') }}">Register Citizen</a>
+                    <a class="nav-link" href="{{ route('citizens.index') }}">View Citizens</a>
                 </div>
             </div>
         </div>

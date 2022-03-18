@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\CitizensController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +20,12 @@ Route::get('/', function () {
 
 Route::get('/books', [BooksController::class, 'index'])->name('books.index');
 Route::post('/books', [BooksController::class, 'store'])->name('books.store');
+
+
+Route::get('/citizens/state/{state}', [CitizensController::class, 'listOfCitizensInAState'])->name('citizens.state');
+Route::get('/citizens/lga/{lga}', [CitizensController::class, 'listOfCitizensInALGA'])->name('citizens.lga');
+Route::get('/citizens/ward/{ward}', [CitizensController::class, 'listOfCitizensInAWard'])->name('citizens.ward');
+Route::resource('citizens', CitizensController::class);
 
 Auth::routes();
 
